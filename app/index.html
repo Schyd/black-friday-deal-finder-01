@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealSift — Black Friday 2026 Deal Finder</title>
+<meta name="description" content="26 real Black Friday deals, every price checked by hand on Nov 27, 2026. Search, filter by category, store and discount, and see an honest signal for each deal.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Black Friday &amp; Cyber Monday 2026</p>
+    <h1>Deal<span class="accent">Sift</span> — the deals worth your money</h1>
+    <p class="tagline">Every price on this page was read by hand from the store&rsquo;s own product page (or a roundup naming the store) on Nov 27, 2026. No copied list prices, no invented discounts — each card shows when it was checked, where, and whether the deal is really a deal.</p>
+    <ul class="stats">
+      <li><b>26</b> deals</li>
+      <li><b>6</b> stores</li>
+      <li><b>8</b> categories</li>
+      <li><b>10</b> new lows</li>
+      <li>Biggest real cut: <b>67% off</b></li>
+    </ul>
+  </div>
+</header>
+
+<section class="controls" aria-label="Search and filter deals">
+  <div class="controls-row">
+    <label class="field field-grow">Search
+      <input type="search" id="search" placeholder="Search deals, brands, products…" autocomplete="off">
+    </label>
+    <label class="field">Category
+      <select id="category"></select>
+    </label>
+    <label class="field">Store
+      <select id="store"></select>
+    </label>
+    <label class="field">Discount
+      <select id="discount">
+        <option value="">Any discount</option>
+        <option value="25">25% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+    </label>
+    <label class="field">Signal
+      <select id="signal"></select>
+    </label>
+    <label class="field">Sort
+      <select id="sort">
+        <option value="best">Best deals first</option>
+        <option value="pct">Biggest discount</option>
+        <option value="saved">Biggest $ saving</option>
+        <option value="price">Lowest price</option>
+        <option value="az">Name A–Z</option>
+      </select>
+    </label>
+    <button class="btn" id="clear-filters" type="button">Clear filters</button>
+  </div>
+  <p class="result-line" id="result-count">Showing 26 of 26 deals · Prices checked Nov 27, 2026</p>
+</section>
+
+<main>
+  <div class="grid" id="deal-grid"></div>
+  <div class="empty" id="empty-state" hidden>
+    <h2>No deals match those filters</h2>
+    <p>Try a wider discount range, a different store, or clear the search.</p>
+  </div>
+</main>
+
+<section class="method" aria-label="How prices were checked">
+  <div class="method-box">
+    <h2>How prices were checked</h2>
+    <p>Each deal was found and checked in person on Nov 27, 2026: the sale price and the usual price were read on the store&rsquo;s own product page, or on a deal roundup that names the store. Every card lists its check time and its source. Discount % = (usual − sale) ÷ usual.</p>
+    <p>&ldquo;Usual&rdquo; is the store&rsquo;s list price or comparable value. Where that number is a store&rsquo;s comparable value rather than a recent selling price, the card says so — because a big % off a number nobody paid is not a big saving.</p>
+    <ul class="legend">
+      <li><span class="chip signal sig-new-low">New low</span> lowest price we have seen for this product</li>
+      <li><span class="chip signal sig-strong-price">Strong price</span> genuinely good, at or near the low</li>
+      <li><span class="chip signal sig-routine-sale">Routine sale</span> a normal, modest cut</li>
+      <li><span class="chip signal sig-inflated">Inflated</span> the list price is set high, so the % overstates the saving</li>
+    </ul>
+    <p>&ldquo;Best deals first&rdquo; ranks by discount % weighted by signal, so a 67% cut on a real low outranks an 89% cut on an inflated list price. Prices change fast on Black Friday — re-check the store page before you buy. All prices in USD.</p>
+  </div>
+</section>
+
+<footer>
+  <p>DealSift — an independent deal finder. Not affiliated with Amazon, Walmart, Best Buy, Shokz, Home Depot or Nordstrom Rack. Product links go to each store&rsquo;s own product page.</p>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
